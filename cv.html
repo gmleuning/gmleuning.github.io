@@ -23,14 +23,16 @@
             margin: 8px 0;
         }
 
-           <title>Custom Bullet Points</title>
+  <title>Custom Bullet Points</title>
     <style>
         ul.custom-list {
-            list-style-type: none; /* Remove default bullet points */
+            list-style: none; /* Remove default bullet points */
+            padding-left: 0; /* Remove default padding */
         }
         
         ul.custom-list li::before {
-            content: '¬ '; /* Add the desired character before each list item */
+            content: '¬'; /* Add the desired character before each list item */
+            margin-right: 10px; /* Add some space between the character and the list item text */
         }
     </style>
         
