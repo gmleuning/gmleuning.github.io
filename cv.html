@@ -23,24 +23,21 @@
             margin: 8px 0;
         }
 
-   <title>Custom Bullet Points</title>
+     <title>Custom Bullet Points</title>
     <style>
         ul.custom-list {
-            list-style-type: none; /* Remove default bullets */
-            padding-left: 0; /* Remove default padding */
+            list-style: none; /* Ensure default bullet points are removed */
+            padding-left: 0; /* Reset padding */
         }
         
         ul.custom-list li {
-            position: relative;
-            padding-left: 20px; /* Create space for the custom bullet */
+            display: list-item; /* Explicitly set display to list-item */
+            list-style-type: none; /* Remove any fallback bullets */
         }
         
         ul.custom-list li::before {
-            content: '¬'; /* Use the desired character as the bullet */
-            position: absolute;
-            left: 0;
-            top: 0;
-            font-weight: bold; /* Optional: make the character bold */
+            content: '¬'; /* Add custom character */
+            margin-right: 10px; /* Add space between bullet and text */
         }
     </style>
         
