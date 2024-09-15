@@ -22,6 +22,20 @@
         p, li {
             margin: 8px 0;
         }
+        /custom bullets/      
+        ul.custom-bullets li {
+            list-style-type: none;
+            position: relative;
+        }
+
+        ul.custom-bullets li::before {
+            content: "¬"; /* Replace with your custom character */
+            position: absolute;
+            left: -20px; /* Adjusts the position of the character */
+            font-size: 1.2em; /* Adjust the size of the character */
+            color: #007BFF; /* Customize color if needed */
+        }
+
     </style>
 </head>
 <body>
@@ -46,8 +60,8 @@
 
     <h2>Other Publications</h2>
     <ul>
-        <strong><a href="./Leuning%2C%20Grant.%20Empirical%20Geometry%20from%20inbetweenness.pdf" target="_blank">Empirical Geometry</a></strong>, Program notes for inbetweenness, Judd Foundation Gallery, 2021 <be>
-       <strong><a href="https://core.ac.uk/download/pdf/54849948.pdf" target="_blank">4DDDDDREAM: Realism in 4D Cinema</a></strong>, KAPSULA Crisis 3/3, 2013
+        <strong><a href="./Leuning%2C%20Grant.%20Empirical%20Geometry%20from%20inbetweenness.pdf" target="_blank">Empirical Geometry</a></strong>, Program notes for inbetweenness, Judd Foundation Gallery, 2021 <br>
+       <strong><a href="https://core.ac.uk/download/pdf/54849948.pdf" target="_blank">4DDDDDREAM: Realism in 4D Cinema</a></strong>, KAPSULA Crisis 3/3, 2013 <br>
     </ul>
 
     <h2>Professional and Academic Awards</h2>
