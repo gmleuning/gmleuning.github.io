@@ -23,20 +23,17 @@
             margin: 8px 0;
         }
 
-          <title>Custom Bullet Points</title>
+           <title>Custom Bullet Points</title>
     <style>
-        ul.custom-bullets li {
-            list-style-type: none; /* Removes the default bullet */
-            position: relative;
+        ul.custom-list {
+            list-style-type: none; /* Remove default bullet points */
         }
-
-        ul.custom-bullets li::before {
-            content: "¬"; /* Replace with your custom character */
-            position: absolute;
-            left: -20px; /* Adjusts the position of the character */
-            font-size: 1.2em; /* Adjust the size of the character */
-            color: #000000; /* Customize color if needed */
+        
+        ul.custom-list li::before {
+            content: '¬ '; /* Add the desired character before each list item */
         }
+    </style>
+        
            <title>Custom Link Colors</title>
     <style>
         /* Unvisited link */
