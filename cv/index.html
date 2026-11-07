@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>C.V. · Grant M. Leuning</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<script>(function(){var l=/^#(ko|en)$/.test(location.hash)?location.hash.slice(1):null;if(!l)try{l=localStorage.getItem("cv-lang")}catch(e){}if(!l)l=/^ko/i.test(navigator.language||"")?"ko":"en";if(l==="ko"){var p=document.createElement("link");p.rel="preload";p.as="font";p.type="font/woff2";p.crossOrigin="";p.href="../fonts/GowunDodum-Regular.woff2";document.head.appendChild(p)}})()</script>
+<link rel="stylesheet" href="../assets/fonts.css?v=3f27b83f1b">
+<link rel="stylesheet" href="../assets/site.css?v=3f27b83f1b">
+<style>
+/* CV: follows the PDF. Right-set name block, grey section bars with spaced capitals, indented entries; one language shown at a time. */
+:root{
+  --paper:#fff; --ink:#1d1d1d; --mute:#6b6b6b; --bar:#ececec; --rule:#d9d9d9;
+  --head:"Zen Maru Gothic","Nanum Gothic","Gowun Dodum",sans-serif;
+  --body:"Gowun Dodum","Zen Maru Gothic",sans-serif;
+  --hb:"Gowun Dodum",sans-serif;
+  --ko:"Gowun Dodum",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#141414;--ink:#e6e6e6;--mute:#9a9a9a;--bar:#262626;--rule:#333;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#141414;--ink:#e6e6e6;--mute:#9a9a9a;--bar:#262626;--rule:#333;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{background:var(--paper)}
+body{margin:0;color:var(--ink);font:400 16px/1.6 var(--body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit;text-underline-offset:2px}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.page{max-width:46rem;margin:0 auto;padding-block:1.4rem 4rem}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:1rem;font:500 14px var(--head);color:var(--mute)}
+.bar a{text-decoration:none}
+.lang{display:inline-flex;border:1px solid var(--rule);border-radius:999px;padding:2px}
+.lang button{font:500 14px var(--head);color:var(--mute);background:none;border:0;border-radius:999px;padding:.3rem .8rem;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.who{text-align:right;margin:2.6rem 0 2.4rem;line-height:1.5}
+.who h1{font:700 23px/1.3 var(--head);margin:0}
+.who p{margin:0;font-family:var(--head)}
+section{margin-top:2rem}
+h2{font:700 13.5px/1 var(--head);letter-spacing:.16em;text-transform:uppercase;background:var(--bar);display:inline-block;min-width:min(55%,22rem);padding:.6rem .7rem;margin:0 0 .9rem}
+:lang(ko) h2{font-family:var(--hb);letter-spacing:.08em}
+article:lang(ko){font-family:var(--ko)}
+.ko-name{font-family:var(--ko);font-weight:700} /* Gowun Dodum has one weight; the browser draws the bold */
+.site-head{max-width:84rem;margin:0 auto;padding-block:1.6rem 0}
+.site-head .top{margin-bottom:0}
+.cv-tools{display:flex;justify-content:flex-end;margin-top:1rem}
+.who a{text-decoration:underline}
+.e{margin:0 0 .9rem 1rem}
+.t{font:500 16px/1.45 var(--head)}
+:lang(ko) .t{font-family:var(--hb);font-weight:700}
+.s{margin-left:1rem}
+.s p{margin:0}
+.k{color:var(--mute)}
+ul.items{list-style:none;margin:.15rem 0 0 1rem;padding:0}
+ul.items li{padding-left:1.1rem;position:relative}
+ul.items li::before{content:"";position:absolute;left:0;top:.62em;width:.5rem;height:.5rem;background:var(--bar)}
+.kw{color:var(--mute);font-size:15px}
+[hidden]{display:none!important}
+:lang(ko){word-break:keep-all}
+@media (max-width:560px){.e{margin-left:0}.s{margin-left:.6rem}.who{text-align:left}}
+</style>
+</head>
+<body>
+<div class="site-head"><header class="top"><a class="name" href="../">Grant M. Leuning</a><nav class="nav" aria-label="Site"><a href="../art-work/">Art Work</a><a href="../research/">Research</a><a href="../cv/" aria-current="page">C.V.</a><a href="../pedagogy/">Pedagogy</a><a href="../projects/">Projects</a><a href="../contact/">Contact</a></nav></header></div>
+<div class="page">
+  <div class="cv-tools">
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" id="btn-en" data-l="en" aria-pressed="true">EN</button>
+      <button type="button" id="btn-ko" data-l="ko" aria-pressed="false">한국어</button>
+    </div>
+  </div>
+
+<!-- ============ ENGLISH ============ -->
+<article id="cv-en" lang="en">
+  <div class="who">
+    <h1>Grant Leuning</h1>
+    <p>Director, Gangjeong Media Activism School</p>
+    <p><a href="mailto:gleuning@ucsd.edu">gleuning@ucsd.edu</a></p>
+    <p>Gangjeong, Jeju, South Korea</p>
+  </div>
+
+  <section><h2>Education</h2>
+    <div class="e"><div class="t">University of California, San Diego</div>
+      <p style="margin:0">Ph.D. 2024, Department of Communication<br>Dissertation Co-Chairs: Fernando Domínguez Rubio and Patricia Ahn</p>
+      <div class="s"><p><i>Showing Up in Gangjeong Village: The Work of Place, Peace, and Appearance at the Jeju Naval Base</i></p>
+      <p>An ethnographic and practice-based research account of militarized tourism and visual resistance, analyzing democratic community-building on Jeju Island, South Korea</p></div></div>
+    <div class="e"><div class="t">University of Minnesota, Twin Cities</div>
+      <p style="margin:0">B.A. 2009, Individual Designed Interdepartmental Major</p>
+      <div class="s"><p>Continental and Post-Structuralist Philosophy</p></div></div>
+  </section>
+
+  <section><h2>Professional and Academic Awards</h2>
+    <div class="e"><div class="t">Democracy Lab Fellow. 2022–2023</div><div class="s"><p>Organized <i>Pacific Something: Oceanic Circuits of Production Democracy</i>, a transnational workshop bringing together democracy activists from activist sites around the Pacific to exchange media production and organizing techniques.</p></div></div>
+    <div class="e"><div class="t">Democracy Lab Fellow. 2021–2022</div><div class="s"><p>Developed <i>13th &amp; K</i>, a public performance and historical installation, in collaboration with the San Diego Public Library, tracing the 1912 Free Speech Movement through Downtown San Diego</p></div></div>
+    <div class="e"><div class="t">University of Padova Summer School Fellow. 2021</div><div class="s"><p>Presented research in the Mimesis and Composition: Anthropological Perspectives on Technology and Art workshop, developing a project on experimental ethnographic methods.</p></div></div>
+    <div class="e"><div class="t">Katzin Fellow. 2015–2020</div><div class="s"><p>Awarded annually to five incoming UC San Diego graduate students demonstrating exceptional scholarly promise.</p></div></div>
+    <div class="e"><div class="t">Transnational Korean Studies AKS Summer Research Fellow. 2016, 2018</div><div class="s"><p>Conducted documentary research on public mural art on Jeju Island, South Korea and undertook ethnographic and archival research on the representation of Jeju haenyeo divers.</p></div></div>
+  </section>
+
+  <section><h2>Refereed Journal Articles</h2>
+    <div class="e"><div class="t">Following Flags: Experimental Mass Production in the Borderlands</div><div class="s"><p><i>Comunicazioni Sociali</i>. n.1, 2021</p><p><a href="https://doi.org/10.26350/001200_000119">https://doi.org/10.26350/001200_000119</a></p><p><i>Co-authored with Pepe Rojo</i></p></div></div>
+  </section>
+
+  <section><h2>Book Chapters</h2>
+    <div class="e"><div class="t">Borderforms</div><div class="s"><p>In <i>Postcollectivity: Situated Theories and Practices</i> eds. Agnieszka Jelewska, Michal Krawczak, Julian Reid. Brill, 2024.</p><p><a href="https://doi.org/10.1163/9789004694880_006">https://doi.org/10.1163/9789004694880_006</a></p><p><i>Co-authored with Pepe Rojo</i></p></div></div>
+    <div class="e"><div class="t">The Sea of Peace and Co-Existence: How to Draw a Line on the Surface of the Sea</div><div class="s"><p>in <i>Detours: A Decolonial Guide to South Korea</i>, eds. Crystal Mun-hye Baik, Jinah Kim, Ju Hui Judy Han, Young-Gyung Paik. Forthcoming from Duke University Press, 2027</p></div></div>
+  </section>
+
+  <section><h2>Other Writing</h2>
+    <div class="e"><div class="t">Tierra y Libertad</div><div class="s"><p>Monograph, with Taller California Press (Forthcoming 2027)</p><p><i>Co-authored with Pepe Rojo</i></p></div></div>
+    <div class="e"><div class="t">The Cinematics of Place</div><div class="s"><p>In <i>장소의 영화운동학 The Cinematics of Place</i></p><p>Jeju Foundation for Art and Culture, 2026</p></div></div>
+    <div class="e"><div class="t">Empirical Geometry</div><div class="s"><p>Exhibition catalogue essay for <i>inbetweenness</i>, a show of the work of Félix González-Torres at the Judd Foundation Gallery. October 22 to December 18, 2021</p></div></div>
+  </section>
+
+  <section><h2>Teaching Experience</h2>
+    <div class="e"><div class="t">Gangjeong Media Activism Summer School (G-MASS)</div><p style="margin:0">Program Director, Lecturer. September 2025 to present</p><div class="s"><p>Founded and administered a residential program for undergraduate and graduate students, focusing on media production and political education. Responsible for curriculum design, faculty coordination, student recruitment, and program logistics.</p></div></div>
+    <div class="e"><div class="t">Gangjeong Peace University, Lecturer</div><ul class="items">
+      <li>Theory and Practice of Demilitarization Seminar. Summer 2026<br><span class="kw">history of militarism, regional security studies, militourism, Jeju history</span></li>
+      <li>Media Production as Ethnographic Research Modality. Summer 2026<br><span class="kw">photography &amp; phenomenology, sound mapping, 16mm film production, semiotics, fabric arts</span></li>
+      <li>Counter-Mapping. Spring 2026<br><span class="kw">counter-cartographic methods, decolonial geography, place-based knowledges, critical spatial practice</span></li>
+    </ul></div>
+    <div class="e"><div class="t">University of California, San Diego, Lecturer</div><ul class="items">
+      <li>Communication 20: Analysis of Media Forms and Cultures. Summer 2025<br><span class="kw">formal and videographic film analysis, post-cinematic and cross-media forms, moving image aesthetics</span></li>
+      <li>Communication 180: Philosophy of Communication. Spring 2025<br><span class="kw">continental philosophy, media theory, structuralism, post-structuralism, critical race and queer phenomenology, philosophical responses to reinforcement learning and LLMs</span></li>
+      <li>Communication 114I: Media Technologies &amp; Social Movements. Winter 2025<br><span class="kw">media archaeology, platform politics, counter-power aesthetics, histories of activist media</span></li>
+      <li>Communication 101A: Media &amp; Activism. Fall 2024<br><span class="kw">tactical media, critical media production, public interventions, multimedia &amp; video production</span></li>
+      <li>Communication 107: Visual Culture. Summer 2024<br><span class="kw">visual semiotics, film and video analysis, the gaze and disciplinary power, political economy of the image</span></li>
+      <li>Communication 10: Introduction to Communication. Summer 2024<br><span class="kw">foundational communication and media theories, semiotics, critical cultural theory, cultural studies</span></li>
+      <li>Communication 190: Junior Seminar: Production Democracy. Fall 2023<br><span class="kw">democratic organizing, political theories of labor, degrowth, labor refusal, critical media production</span></li>
+      <li>Communication 131: Communication, Dissent, &amp; the Formation of Social Movements. Summer 2023<br><span class="kw">democratic theory, oppositional aesthetics, counter-mapping, media production as direct action</span></li>
+      <li>Communication 103F: How to Read a Film. Summer 2021, Fall 2021, Summer 2022<br><span class="kw">classical &amp; post-cinematic film theory, formal film analysis, vernacular media forms, digital formalism</span></li>
+      <li>Communication 146: Critical Production: Zines. Winter 2021<br><span class="kw">material print culture, zines as praxis, political economy of print media, oppositional media networks</span></li>
+      <li>Communication 100B: Communication, Culture &amp; Representation. Summer 2020<br><span class="kw">semiotics, critical theory, film and video analysis, media aesthetics, regimes of visibility</span></li>
+    </ul></div>
+    <div class="e"><div class="t">University of California, San Diego, Teaching Assistant</div><div class="s"><p>As a Teaching Assistant (2016–2024), I assisted instruction across a range of undergraduate courses in communication, media studies, visual culture, Korean popular culture, including courses in which I served as primary instructor for practical media production components.</p></div></div>
+  </section>
+
+  <section><h2>Service</h2>
+    <div class="e"><div class="t">Graduate Student Qualifying Mentor. 2021–2022, 2022–2023, 2023–2024</div><div class="s"><p>Adviser of three prospective PhD candidates through their qualification process; provided mentorship on research design, writing development, and professionalization</p></div></div>
+    <div class="e"><div class="t">Muir College Writing Program Curriculum Development Committee. 2022</div><div class="s"><p>Co-developed the 2022–2024 core writing curriculum focused on environmental racism, integrating social justice pedagogy and interdisciplinary approaches</p></div></div>
+    <div class="e"><div class="t">Anti-Racist Working Group. 2021–2022</div><div class="s"><p>Graduate Student Member, Decolonizing Syllabus program, initiative to revise core department syllabi.</p></div></div>
+    <div class="e"><div class="t">Democracy Lab Graduate Student Committee. 2020–2021</div><div class="s"><p>Served on the grant review committee for two funding tracks; evaluated proposals advancing democratic engagement and community-based research.</p></div></div>
+    <div class="e"><div class="t">Communication Department Head Teaching Assistant. 2019–2020</div><div class="s"><p>Designed and implemented training for incoming TAs; authored departmental pedagogy manual emphasizing accessibility and inclusive teaching; coordinated faculty workshops on disability access methods; observed instructors and provided individualized feedback.</p></div></div>
+    <div class="e"><div class="t">Communication Department COVID–19 Distance Learning Specialist. Spring 2020</div><div class="s"><p>Led faculty and graduate training on digital pedagogy during the pandemic; advised on technology adoption, accessibility, and policy for 2020–2021.</p></div></div>
+    <div class="e"><div class="t">Counter Technologies at the Edgelands Conference, Steering Committee Member. 2019–2020</div><div class="s"><p>Coordinated programming, logistics, and visiting scholar liaison duties for an interdisciplinary conference.</p></div></div>
+    <div class="e"><div class="t">Tenure Track Critical Media Hiring Committee. 2018–2019</div></div>
+    <div class="e"><div class="t">Teaching Professor Media Production Hiring Committee. 2019</div><div class="s"><p>Reviewed applications for four faculty lines in Cultural Studies, Media Studies, Journalism, and Media Production; participated in candidate evaluations and departmental voting.</p></div></div>
+    <div class="e"><div class="t">Graduate Admissions Committee. 2016</div><div class="s"><p>Evaluated applications for the 2017 PhD cohort; participated in selection and admissions deliberations.</p></div></div>
+  </section>
+
+  <section><h2>Selected Exhibitions &amp; Performances</h2>
+    <div class="e"><div class="t">펜스 Fence. 2026</div><p style="margin:0">Director</p><ul class="items"><li>Film (36 min); Opening screening, September 1, 2026, at the Jeju Naval Base</li></ul></div>
+    <div class="e"><div class="t">Kinofield Art Collective. November 2025 to present</div><p style="margin:0">Altitude 518, Jeju, South Korea<br>Co-founder</p><ul class="items"><li>Jeju-based art collective, deploying arts-based education and research, film production, media performance, and permaculture farming</li></ul></div>
+    <div class="e"><div class="t">Counter-Mapping Group Show. June 2026</div><p style="margin:0">Tongmul Library, Seogwipo, Jeju, South Korea<br>Curator</p><ul class="items"><li>A group show by the Counter-Mapping workshop series, including audio, video, photography, and cartographic presentations.</li></ul></div>
+    <div class="e"><div class="t">Gureombi Memorial Project. September 2025</div><p style="margin:0">Jeju Naval Base, Seogwipo, Jeju, South Korea</p><ul class="items"><li><i>돌아오기 Gureombi Returns</i><br><span class="kw">Textiles</span></li><li><i>구럼비야 숨을 쉰다 Gureombi is Breathing</i><br><span class="kw">Textiles, Performance</span></li></ul></div>
+    <div class="e"><div class="t">Landform. February 2025 to June 2025</div><p style="margin:0">University of California, San Diego<br>Director, Artist</p><ul class="items"><li><i>Longform</i><br><span class="kw">Textiles</span></li><li><i>Landform</i><br><span class="kw">Textiles, Collective performance, installation</span></li></ul></div>
+    <div class="e"><div class="t">I Can Write Slower Than You solo show. March 2023</div><p style="margin:0">Gonggan Gallery, Seogwipo, Jeju, South Korea</p><ul class="items"><li><i>생명평화 강정마을 Life and Peace in Gangjeong Village</i><br><span class="kw">Textiles</span></li><li><i>Encounter between Earth and Liberation</i><br><span class="kw">Acrylic Painting</span></li><li><i>대지와 해방 Tierra y Libertad</i><br><span class="kw">Textiles</span></li><li><i>구럼비야 일어나라 Gureombi, Wake Up!</i><br><span class="kw">Acrylic Painting</span></li><li><i>Unwelcome to Gangjeong Village</i><br><span class="kw">Acrylic painting Installation</span></li></ul></div>
+    <div class="e"><div class="t">Performing Islands — Hong Kong and Jeju as Cases film screening and forum. August 2022</div><p style="margin:0">WMA Space, Hong Kong</p><ul class="items"><li><i>Experimental Tactics for the Subjectivation of Hostile Objects: Jeju Naval Base</i><br><span class="kw">Video (9 min)</span></li><li><i>Line, Gather, Rock-in-the-Way</i><br><span class="kw">Video (12 min)</span></li></ul></div>
+    <div class="e"><div class="t">Judd Foundation. June 2022 to March 2023</div><p style="margin:0">The Block, Marfa, TX</p><ul class="items"><li><i>Between Lands</i><br><span class="kw">Twinned textile</span></li></ul></div>
+    <div class="e"><div class="t">#Retrocolectiva group show. May 2022</div><p style="margin:0">Gallery QI, San Diego, CA</p><ul class="items"><li><i>Production Print</i><br><span class="kw">Performance, textiles</span></li></ul></div>
+    <div class="e"><div class="t">Occupy Thirdspace II: Plástica Y Palabra En TJ/SD group show. February 2022 to May 2022</div><p style="margin:0">Central Library Gallery, San Diego, CA</p><ul class="items"><li><i>Unassemblage / No-Ensamblaje</i><br><span class="kw">Sculpture, Mixed media (fabric, vinyl, paper, collage)</span></li><li><i>Disassemblage / Desensamblaje</i><br><span class="kw">Sculpture, fabric, acrylic paint</span></li><li><i>Experimental Tactics for the Subjectivation of Hostile Objects: Border Wall</i><br><span class="kw">Two-channel video installation</span></li><li><i>13th and K</i><br><span class="kw">Public installation and performance, May 1, 2022</span></li></ul></div>
+    <div class="e"><div class="t">Desde Más Acá group show. November 2018</div><p style="margin:0">City Gallery, San Diego, CA</p><ul class="items"><li><i>Flagline</i><br><span class="kw">Textiles</span></li></ul></div>
+    <div class="e"><div class="t">Are You Bringing Something from Mexico? January 2018</div><p style="margin:0">Holtville, CA<br>Director, Videographer</p><ul class="items"><li>Theatrical performance</li></ul></div>
+    <div class="e"><div class="t">Centennial Commemoration of La Constitución Ha Muerto. February 2017</div><p style="margin:0">Mexico City, Mexico<br>Director, Cinematographer, Designer, Textile Artist</p><ul class="items"><li>Installation at Casa de El Hijo del Ahuizote, and public performances at the Alameda Central, Zócalo, Catedral Metropolitana, Palacio Nacional, Palacio de Bellas Artes and Museo Nacional de Arte</li></ul></div>
+    <div class="e"><div class="t">¡ACTOS! Comité Magonista: Tierra y Libertad. May 2016 to June 2016</div><p style="margin:0">San Diego, CA and Tijuana, BC<br>Co-founding organizer, Director, Designer, Textile artist</p><ul class="items"><li>A series of events hosted by the Comité Magonista, a transborder / edgeland Art Collective, including conferences, public workshops, education centers, and art performances.</li></ul></div>
+    <div class="e"><div class="t">&amp;Now 2015: Blast Radius. March 2015</div><p style="margin:0">Bijou Theater, California Institute of the Arts, Santa Clarita, CA</p><ul class="items"><li><i>Trash Pierrot</i><br><span class="kw">Performance; writer, performer, costume design</span></li><li><i>Epistolary Mistranslations</i><br><span class="kw">Performance, with Gabriel Kalmuss-Katz</span></li></ul></div>
+    <div class="e"><div class="t">NOW Literary Reading Series. May 2014 to March 2020</div><p style="margin:0">San Diego, CA and Tijuana, BC<br>Co-Founder and Curator</p><ul class="items"><li>Monthly Transborder Literary Reading series, with 60 performances by more than 150 poets, writers, and artists from the Tijuana / San Diego region</li></ul></div>
+    <div class="e"><div class="t">Gosung Cinema Series. February 2011 to February 2012</div><p style="margin:0">Daegu, South Korea<br>Founder and Curator</p><ul class="items"><li>Microcinema and performance series</li></ul></div>
+  </section>
+
+  <section><h2>Selected Guest Lectures and Workshops</h2>
+    <div class="e"><div class="t">On Obstruction Aesthetics. July 2026</div><div class="s"><p>Korean Art, Society and Culture Lecture Series, Transnational Korean Studies and UC San Diego Visual Arts Department</p></div></div>
+    <div class="e"><div class="t">Mediated and Militarized. December 2025</div><div class="s"><p>UC San Diego, COMM 114I Media Technologies and Social Movements</p></div></div>
+    <div class="e"><div class="t">We Will Be Back Here Tomorrow Flag-making ceremony. September 2024</div><div class="s"><p>Jeju Peace for the Sea Camp, Jeju, South Korea</p></div></div>
+    <div class="e"><div class="t">Following Flags to Gangjeong Village. November 2022</div><div class="s"><p>Peace University Program, Jeju, South Korea</p></div></div>
+    <div class="e"><div class="t">Zine Production Workshop. Spring 2022</div><div class="s"><p>UC San Diego, COMM 146 Asian American Arts &amp; Activism</p></div></div>
+    <div class="e"><div class="t">The Feminine Past: Gender Temporality and Gender Myth. Spring 2019</div><div class="s"><p>UC San Diego, LTEA 143 Pop Culture &amp; “New” Masculinities of South Korea</p></div></div>
+    <div class="e"><div class="t">Critical Design and Thick Description. Winter 2019</div><div class="s"><p>UC San Diego, COMM 190</p></div></div>
+    <div class="e"><div class="t">Tierra y Libertad Flag-Making Workshop. November 2018</div><div class="s"><p>San Diego City College, San Diego, CA</p></div></div>
+  </section>
+
+  <section><h2>Conference Presentations</h2>
+    <div class="e"><div class="t">“Distributed Operations”: The Militarization of Essential Infrastructure. October 2025</div><div class="s"><p>2025 Peace for the Sea Camp Conference<br>Keelung, Taiwan</p></div></div>
+    <div class="e"><div class="t">Abstraction and Realization: On the Epistemologies of Zen for Film. May 2025</div><div class="s"><p>Spiral Film and Philosophy Conference<br>Toronto, Canada</p></div></div>
+    <div class="e"><div class="t">Realizing the Sea of Peace and Co-Existence. March 2025</div><div class="s"><p>American Association of Geographers Annual Meeting<br>Detroit, MI</p></div></div>
+    <div class="e"><div class="t">Struggle Song: Sonic Conflict in the Jeju Anti-Base Movement. June 2023</div><div class="s"><p>HASTAC Critical Making and Social Justice Conference<br>Pratt Institute, New York, NY</p></div></div>
+    <div class="e"><div class="t">Life and After Life: The Struggle Against the Jeju Naval Base. June 2023</div><div class="s"><p>Cultural Studies Association 2023 Conference<br>George Mason University, Fairfax, VA</p></div></div>
+    <div class="e"><div class="t">Thick Membrane: Inside the Cinematic Surface. April 2023</div><div class="s"><p>Abstraction and Aesthetics of Movement: Questions &amp; Methods for Media Ethics Roundtable<br>Society for Cinema and Media Studies 2023 Conference. Denver, CO</p></div></div>
+    <div class="e"><div class="t">Replacing the Map: Creative Geography on Jeju Island. June 2022</div><div class="s"><p>Cultural Studies Association 2022 Conference<br>Columbia College, Chicago, IL</p></div></div>
+    <div class="e"><div class="t">Ways of Being-in-the-Way: Plaza and Place on Jeju Island. March 2022</div><div class="s"><p>Mimesis and Composition Summer School Workshop<br>University of Padova, Padova, Italy</p></div></div>
+    <div class="e"><div class="t">Being-in-the-Way: Place Cultivation and Coordination in Gangjeong Village. March 2022</div><div class="s"><p>Association for Asian Studies. Honolulu, HI</p></div></div>
+    <div class="e"><div class="t">On the Fence: Experimental Solidarities on Jeju Island and the US-Mexico Border. February 2022</div><div class="s"><p>Multiple Decolonialities and the Making of Asian Commons<br>Virtual</p></div></div>
+    <div class="e"><div class="t">Body Work: Jeju Haenyeo and the Laboring Image. June 2021</div><div class="s"><p>Cultural Studies Association 2021 Conference<br>Virtual</p></div></div>
+    <div class="e"><div class="t">Bearing Faces: Identity and Image on Jeju Island. May 2021</div><div class="s"><p>World Weary: Cultures of Exhaustion Roundtable<br>University of Sheffield</p></div></div>
+    <div class="e"><div class="t">The Face of the Haenyeo: Images Against Depiction. December 2018</div><div class="s"><p>UCLA–UCSD Graduate Student Panel<br>University of California San Diego, San Diego, CA</p></div></div>
+    <div class="e"><div class="t">Tierra y Libertad: Autonomous Aesthetics at the Magonista Front. July 2018</div><div class="s"><p>Performance Studies International 2018<br>Daegu, South Korea</p></div></div>
+    <div class="e"><div class="t">Tierra y Libertad: Pens/Hacer Politics, Collective Aesthetics Against Representation. June 2018</div><div class="s"><p>Art (and Anthropology) Beyond Materiality and Representation Panel<br>Art, Materiality and Representation Conference, SOAS, University of London, London, UK</p></div></div>
+    <div class="e"><div class="t">Tierra y Libertad: Flag and Phrase in a 21st Century Border Zone. May 2017</div><div class="s"><p>Making &amp; Doing Panel<br>International Communication Association Conference. San Diego, CA</p></div></div>
+    <div class="e"><div class="t">Two Vectors and a Busted Crux: Flag and Constitution in Theoretical Magonism. February 2017</div><div class="s"><p>Centennial Conference on La Constitución Ha Muerto<br>Casa de El Hijo del Ahuizote. Mexico City, DF</p></div></div>
+    <div class="e"><div class="t">Byeokhwa on Jeju Island: Four Modes of Located Representation. October 2016</div><div class="s"><p>Transnational Korean Studies Graduate Student Workshop<br>University of California San Diego, San Diego, CA</p></div></div>
+    <div class="e"><div class="t">Tierra y Libertad as Alien Object: Autonomous Materialism Without Agency. June 2016</div><div class="s"><p>Shaping Change: Remembering Octavia E. Butler<br>University of California San Diego, San Diego, CA</p></div></div>
+    <div class="e"><div class="t">Flag Maneuvers in Tijuana and San Diego. April 2016</div><div class="s"><p>Binational Communications Conference<br>San Diego State University, San Diego, CA</p></div></div>
+    <div class="e"><div class="t">¡Es hora de alzar banderas!: Presentarán proyecto de historia Tierra y Libertad. April 2016</div><div class="s"><p>Historical Conference on Tierra y Libertad<br>Universidad Autónoma de Baja California (UABC). Tijuana, BC</p></div></div>
+  </section>
+</article>
+
+<!-- ============ 한국어 ============ -->
+<article id="cv-ko" lang="ko" hidden>
+  <div class="who">
+    <h1>Grant Leuning <span class="ko-name">홍들소</span></h1>
+    <p>강정 미디어 액티비즘 스쿨 디렉터</p>
+    <p><a href="mailto:gleuning@ucsd.edu">gleuning@ucsd.edu</a> · 대한민국 제주 강정</p>
+  </div>
+
+  <section><h2>학력</h2>
+    <div class="e"><div class="t">커뮤니케이션학 박사</div><div class="s">
+      <p>캘리포니아대학교 샌디에고 · 2024년</p>
+      <p><i>Showing Up in Gangjeong Village: The Work of Place, Peace, and Appearance at the Jeju Naval Base</i></p>
+      <p>『학위논문: 강정마을에서의 나타남: 제주 해군기지에서의 장소, 평화, 그리고 출현의 노동』</p>
+      <p>제주도의 환경 및 반군사주의 조직화와 미디어 액티비즘에 관한 민족지적·실천기반 연구. 심사위원: Fernando Domínguez Rubio, Patricia Ahn, Page duBois, Angela Booker, Matilde Córdoba Azcárate.</p></div></div>
+    <div class="e"><div class="t">철학 학사 — 대륙철학 및 후구조주의 철학</div><div class="s"><p>미네소타대학교 트윈시티즈 · 2009년 · 자율설계 학제간 전공</p></div></div>
+  </section>
+
+  <section><h2>연구 관심 분야</h2>
+    <div class="e"><p style="margin:0">군사화와 탈군사화 · 비판지리학과 공간적 실천 · 동북아시아 지역연구(한국 중심) · 역사사회학 · 영화이론과 시각문화 · 미디어 액티비즘, 전술적 미디어, 실천기반 연구 · 대항지도제작과 장소기반 지식 · 이미지의 정치경제학</p></div>
+  </section>
+
+  <section><h2>저술</h2>
+    <div class="e"><div class="t">학술지 논문 (심사)</div></div>
+    <div class="e"><div class="t">Following Flags: Experimental Mass Production in the Borderlands</div><div class="s"><p>『Comunicazioni Sociali』 n.1 · 2021 · Pepe Rojo 공저 · <a href="https://doi.org/10.26350/001200_000119">doi.org/10.26350/001200_000119</a></p></div></div>
+    <div class="e"><div class="t">저서</div></div>
+    <div class="e"><div class="t">Tierra y Libertad</div><div class="s"><p>Taller California Press · 2027년 간행 예정 · Pepe Rojo 공저</p></div></div>
+    <div class="e"><div class="t">단행본 수록 논문</div></div>
+    <div class="e"><div class="t">How to Draw a Line on the Surface of the Sea</div><div class="s"><p>『Detours: A Decolonial Guide to South Korea』 · Duke University Press · 2027년 간행 예정. 편저: Crystal Mun-hye Baik, Jinah Kim, Ju Hui Judy Han, Young-Gyung Paik.</p></div></div>
+    <div class="e"><div class="t">Borderforms</div><div class="s"><p>『Postcollectivity: Situated Theories and Practices』 · Brill · 2024 · Pepe Rojo 공저 · <a href="https://doi.org/10.1163/9789004694880_006">doi.org/10.1163/9789004694880_006</a>. 편저: Agnieszka Jelewska, Michal Krawczak, Julian Reid.</p></div></div>
+    <div class="e"><div class="t">기타 저술</div></div>
+    <div class="e"><div class="t">The Cinematics of Place</div><div class="s"><p>『장소의 영화운동학 The Cinematics of Place』 · 제주문화예술재단 · 2026</p></div></div>
+    <div class="e"><div class="t">Empirical Geometry</div><div class="s"><p>Judd Foundation Gallery · 2021 · 전시 도록 에세이</p><p>펠릭스 곤잘레스-토레스 전 「inbetweenness」, 2021년 10월 22일–12월 18일.</p></div></div>
+  </section>
+
+  <section><h2>수상 및 연구지원</h2>
+    <div class="e"><div class="t">Democracy Lab Fellow</div><div class="s"><p>캘리포니아대학교 샌디에고 · 2022–2023 · 환태평양 각지의 민주주의 활동가들이 미디어 제작과 조직화 기법을 교환하는 초국가적 워크숍 「Pacific Something: Oceanic Circuits of Production Democracy」 기획.</p></div></div>
+    <div class="e"><div class="t">Democracy Lab Fellow</div><div class="s"><p>캘리포니아대학교 샌디에고 · 2021–2022 · 샌디에고 공공도서관과 함께 1912년 언론자유운동의 경로를 따라가는 공공 퍼포먼스·역사 설치 「13th and K」 개발.</p></div></div>
+    <div class="e"><div class="t">University of Padova Summer School Fellow</div><div class="s"><p>이탈리아 파도바 · 2021 · 「Mimesis and Composition: Anthropological Perspectives on Technology and Art」 워크숍에서 실험적 민족지 방법론 연구 발표.</p></div></div>
+    <div class="e"><div class="t">Transnational Korean Studies AKS Summer Research Fellow</div><div class="s"><p>캘리포니아대학교 샌디에고 · 2016, 2018</p></div><ul class="items"><li>제주도 공공 벽화에 관한 기록 연구</li><li>제주 해녀의 재현에 관한 민족지적·아카이브 연구</li></ul></div>
+    <div class="e"><div class="t">Katzin Fellow</div><div class="s"><p>캘리포니아대학교 샌디에고 · 2015–2020 · 뛰어난 학문적 잠재력을 인정받은 신입 대학원생 5명에게 매년 수여.</p></div></div>
+  </section>
+
+  <section><h2>강의 경력</h2>
+    <div class="e"><div class="t">설립자 및 프로그램 디렉터</div><div class="s"><p>강정 미디어 액티비즘 서머스쿨 (G-MASS) · 제주 강정 · 2025년 9월–현재</p><p>최근 졸업생 및 대학원생을 대상으로 한 한 달간 합숙형 미디어 제작·정치교육 프로그램을 설립·운영. 커리큘럼 설계, 교수진 조율, 학생 모집, 운영 전반을 담당하며 예술기반 연구방법론 워크숍과 「군사주의와 관광」 세미나를 강의.</p></div></div>
+    <div class="e"><div class="t">강사</div><div class="s"><p>강정평화대학 · 2026년–현재</p></div><ul class="items">
+      <li>Theory and Practice of Demilitarization · 2026년 여름</li>
+      <li>Media Production as Ethnographic Research Modality · 2026년 여름</li>
+      <li>Counter-Mapping · 2026년 봄 — 대항지도제작 방법, 탈식민 지리학, 장소기반 지식, 비판적 공간 실천</li></ul>
+      <div class="s" style="margin-top:.6rem"><p>캘리포니아대학교 샌디에고 · 2020–2025</p></div><ul class="items">
+      <li>COMM 180 Philosophy of Communication · 2025년 봄<br><span class="kw">대륙철학, 미디어 이론, 구조주의와 후구조주의, 비판적 인종·퀴어 현상학, 거대언어모델에 대한 철학적 응답</span></li>
+      <li>COMM 114I Media Technologies and Social Movements · 2025년 겨울<br><span class="kw">미디어 고고학, 플랫폼 정치, 대항권력의 미학, 액티비즘 미디어의 역사</span></li>
+      <li>COMM 20 Analysis of Media Forms and Cultures · 2025년 여름<br><span class="kw">형식적·영상적 영화분석, 포스트시네마와 크로스미디어 형식, 움직이는 이미지의 미학</span></li>
+      <li>COMM 101A Media and Activism · 2024년 가을<br><span class="kw">전술적 미디어, 비판적 미디어 제작, 공공 개입, 멀티미디어와 영상 제작</span></li>
+      <li>COMM 107 Visual Culture · 2024년 여름<br><span class="kw">시각 기호학, 영화·영상 분석, 응시와 규율권력, 이미지의 정치경제학</span></li>
+      <li>COMM 10 Introduction to Communication · 2024년 여름<br><span class="kw">커뮤니케이션·미디어 이론 입문, 기호학, 비판적 문화이론</span></li>
+      <li>COMM 190 Junior Seminar: Production Democracy · 2023년 가을<br><span class="kw">민주적 조직화, 노동의 정치이론, 탈성장, 노동 거부, 비판적 미디어 제작</span></li>
+      <li>COMM 131 Communication, Dissent, and the Formation of Social Movements · 2023년 여름<br><span class="kw">민주주의 이론, 대항적 미학, 대항지도제작, 직접행동으로서의 미디어 제작</span></li>
+      <li>COMM 103F How to Read a Film · 2021년 여름·가을, 2022년 여름<br><span class="kw">고전적·포스트시네마 영화이론, 형식적 영화분석, 일상적 미디어 형식, 디지털 형식주의</span></li>
+      <li>COMM 146 Critical Production: Zines · 2021년 겨울<br><span class="kw">물질적 인쇄문화, 실천으로서의 진, 인쇄미디어의 정치경제학, 대항적 미디어 네트워크</span></li>
+      <li>COMM 100B Communication, Culture, and Representation · 2020년 여름<br><span class="kw">기호학, 비판이론, 영화·영상 분석, 미디어 미학, 가시성의 체제</span></li></ul></div>
+    <div class="e"><div class="t">강의 조교</div><div class="s"><p>캘리포니아대학교 샌디에고 · 2016–2024 · 커뮤니케이션, 미디어 연구, 시각문화, 한국 대중문화 관련 학부 강의 전반을 보조했으며, 일부 강의에서는 실습 미디어 제작 파트의 주강을 맡음.</p></div></div>
+    <div class="e"><div class="t">초청 강연 및 워크숍</div><ul class="items">
+      <li>On Obstruction Aesthetics · Korean Art, Society &amp; Culture Lecture Series, 캘리포니아대학교 샌디에고 · 2026년 7월</li>
+      <li>Mediated and Militarized · COMM 114I, 캘리포니아대학교 샌디에고 · 2025년 12월</li>
+      <li>We Will Be Back Here Tomorrow 깃발 제작 의례 · Jeju Peace for the Sea Camp, 제주 · 2024년 9월</li>
+      <li>Following Flags to Gangjeong · 강정평화대학, 제주 · 2022년 11월</li>
+      <li>Zine Production Workshop · COMM 146, 캘리포니아대학교 샌디에고 · 2022년 봄</li>
+      <li>The Feminine Past: Gender Temporality and Gender Myth on Jeju Island · LTEA 143, 캘리포니아대학교 샌디에고 · 2019년 봄</li>
+      <li>Critical Design and Thick Description · COMM 190, 캘리포니아대학교 샌디에고 · 2019년 겨울</li>
+      <li>Tierra y Libertad Flag-Making Workshop · San Diego City College, 캘리포니아주 샌디에고 · 2018년 11월</li></ul></div>
+  </section>
+
+  <section><h2>대학 봉사</h2>
+    <div class="e"><div class="t">대학원생 자격시험 멘토</div><div class="s"><p>캘리포니아대학교 샌디에고 · 2021–2024</p><p>박사과정 지원자 3명의 자격시험 과정을 지도하고 연구 설계, 글쓰기, 전문성 개발을 멘토링.</p></div></div>
+    <div class="e"><div class="t">Muir College 글쓰기 프로그램 커리큘럼 개발 위원회</div><div class="s"><p>캘리포니아대학교 샌디에고 · 2022</p><p>환경 인종주의를 주제로 한 2022–2024 핵심 글쓰기 커리큘럼을 공동 개발.</p></div></div>
+    <div class="e"><div class="t">반인종차별 연구모임</div><div class="s"><p>캘리포니아대학교 샌디에고 · 2021–2022</p><p>Decolonizing Syllabus 이니셔티브에 참여하여 학과 핵심 강의 자료를 교수진과 함께 비판적으로 개편.</p></div></div>
+    <div class="e"><div class="t">Democracy Lab 대학원생 위원회</div><div class="s"><p>캘리포니아대학교 샌디에고 · 2020–2021</p><p>2개 지원 트랙의 연구비 심사 위원으로 활동.</p></div></div>
+    <div class="e"><div class="t">커뮤니케이션학과 수석 강의 조교</div><div class="s"><p>캘리포니아대학교 샌디에고 · 2019–2020</p><p>신임 조교 교육 설계·실시, 접근성과 포용적 강의를 중심에 둔 학과 교수법 매뉴얼 집필, 장애 접근성 워크숍 조율, 강의 참관 및 개별 피드백 제공.</p></div></div>
+    <div class="e"><div class="t">커뮤니케이션학과 COVID-19 원격교육 전문위원</div><div class="s"><p>캘리포니아대학교 샌디에고 · 2020년 봄</p><p>교수진·대학원생 대상 디지털 교수법 교육을 주도하고 2020–2021 기술 도입·접근성·정책에 관해 자문.</p></div></div>
+    <div class="e"><div class="t">Counter Technologies at the Edgelands 컨퍼런스 운영위원</div><div class="s"><p>2019–2020</p><p>학제간 컨퍼런스의 프로그램, 운영, 방문 학자 연락 업무 조율.</p></div></div>
+    <div class="e"><div class="t">교원 초빙 위원회</div><div class="s"><p>캘리포니아대학교 샌디에고 · 2018–2019</p><p>비판미디어 정규트랙 및 미디어제작 교육교수 초빙에서 4개 교원 직위의 지원서를 검토하고 후보자 평가 및 학과 투표에 참여.</p></div></div>
+    <div class="e"><div class="t">대학원 입학 위원회</div><div class="s"><p>캘리포니아대학교 샌디에고 · 2016</p><p>2017년 박사과정 지원서 평가 및 선발 심의 참여.</p></div></div>
+  </section>
+
+  <section><h2>주요 전시 및 퍼포먼스</h2>
+    <div class="e"><div class="t">펜스 Fence</div><div class="s"><p>제주 해군기지 · 영화(36분) · 감독 · 2026년 9월 1일 첫 상영</p></div></div>
+    <div class="e"><div class="t">Gureombi Memorial Project</div><div class="s"><p>제주 해군기지 · 제주 서귀포 · 2025년 9월</p></div><ul class="items">
+      <li>돌아오기 Gureombi Returns, 섬유</li><li>구럼비야 숨을 쉰다 Gureombi Is Breathing, 섬유, 퍼포먼스</li></ul></div>
+    <div class="e"><div class="t">I Can Write Slower Than You</div><div class="s"><p>공간갤러리 · 제주 서귀포 · 개인전 · 2023년 3월</p><p>강정마을 해군기지 반대 투쟁을 다룬 섬유·회화·설치 작업.</p></div><ul class="items">
+      <li>생명평화 강정마을 Life and Peace in Gangjeong Village, 섬유</li><li>Encounter between Earth and Liberation, 아크릴 회화</li><li>대지와 해방 Tierra y Libertad, 섬유</li><li>구럼비야 일어나라 Gureombi, Wake Up!, 아크릴 회화</li><li>Unwelcome to Gangjeong Village, 설치</li></ul></div>
+    <div class="e"><div class="t">Performing Islands: Hong Kong and Jeju as Cases</div><div class="s"><p>WMA Space · 홍콩 · 영상 상영 및 공개 포럼 · 2022년 8월</p></div><ul class="items">
+      <li>Experimental Tactics for the Subjectivation of Hostile Objects: Jeju Naval Base, 영상</li><li>Line, Gather, Rock-in-the-Way, 영상</li></ul></div>
+    <div class="e"><div class="t">&amp;Now 2015: Blast Radius</div><div class="s"><p>Bijou Theater, 캘리포니아예술대학 · 캘리포니아주 산타클라리타 · 2015년 3월</p></div><ul class="items">
+      <li>Trash Pierrot, 퍼포먼스; 작가·퍼포머·의상 디자인</li><li>Epistolary Mistranslations, 퍼포먼스; Gabriel Kalmuss-Katz 공동</li></ul></div>
+    <div class="e"><div class="t">코미테 마고니스타 · TIERRA Y LIBERTAD 활동</div><div class="s"><p>「Tierra y Libertad」는 Pepe Rojo와 함께하는 진행형 공동 프로젝트로, 2016년부터 티후아나/샌디에고 접경지역, 멕시코시티, 런던, 마파, 제주도를 가로지르며 깃발·섬유·퍼포먼스·인쇄를 통해 작업해 왔다.</p></div></div>
+    <div class="e"><div class="t">Landform</div><div class="s"><p>캘리포니아대학교 샌디에고 · 캘리포니아주 라호야 · 무허가 설치 · 2025년 5–6월</p></div><ul class="items">
+      <li>Longform, 깃발, 직물, 5 × 2 m, 2025년 5월</li><li>Landform, 깃발, 직물, 12 × 7 m, 2025년 6월</li></ul></div>
+    <div class="e"><div class="t">Between Lands</div><div class="s"><p>Judd Foundation, The Block · 텍사스주 마파 · 2022년 6월–2023년 3월</p></div><ul class="items"><li>Between Lands, 쌍을 이룬 깃발 조각, 직물, 1 × 2 m</li></ul></div>
+    <div class="e"><div class="t">#Retrocolectiva</div><div class="s"><p>Gallery QI · 캘리포니아주 샌디에고 · 단체전 · 2022년 5월</p></div><ul class="items"><li>Production Print, 퍼포먼스, 섬유</li></ul></div>
+    <div class="e"><div class="t">Occupy Thirdspace II: Plástica y Palabra en TJ/SD</div><div class="s"><p>Central Library Gallery · 캘리포니아주 샌디에고 · 2022년 2–5월</p></div><ul class="items">
+      <li>Experimental Tactics for the Subjectivation of Hostile Objects: Border Wall, 2채널 영상 설치</li><li>Unassemblage / No-Ensamblaje, 설치, 조각, 혼합매체(직물, 비닐, 종이, 콜라주)</li><li>Disassemblage / Desensamblaje, 조각, 직물 10 × 2 m, 아크릴 페인트</li><li>13th and K, 공공 설치 및 퍼포먼스, 2022년 5월 1일</li></ul></div>
+    <div class="e"><div class="t">Desde Más Acá</div><div class="s"><p>City Gallery · 캘리포니아주 샌디에고 · 단체전 · 2018년 11월</p></div><ul class="items"><li>Flagline, 섬유</li></ul></div>
+    <div class="e"><div class="t">Are You Bringing Something from Mexico?</div><div class="s"><p>캘리포니아주 홀트빌 · 2018년 1월 · 감독, 영상 촬영</p></div><ul class="items"><li>연극 퍼포먼스</li></ul></div>
+    <div class="e"><div class="t">Centennial Commemoration of La Constitución Ha Muerto</div><div class="s"><p>멕시코 멕시코시티 · 2017년 2월</p></div><ul class="items">
+      <li>La Constitución Ha Muerto, 퍼포먼스, 팔라시오 데 베야스 아르테스 및 국립예술박물관(MUNAL)</li><li>Vamos Hacia la Vida, 퍼포먼스, 알라메다 센트랄, 소칼로, 메트로폴리타나 대성당, 국립궁전</li><li>Repetición en la Ventana, 조각, 직물, 페인트, 퍼포먼스, 카사 데 엘 이호 델 아우이소테</li></ul></div>
+    <div class="e"><div class="t">¡ACTOS! Comité Magonista: Tierra y Libertad</div><div class="s"><p>멕시코 티후아나 및 캘리포니아주 샌디에고 · 2016년 5–6월</p><p>접경지역 예술가 집단 코미테 마고니스타가 연 컨퍼런스, 공개 워크숍, 교육센터, 예술 퍼포먼스 연작.</p></div></div>
+  </section>
+
+  <section><h2>기획 및 조직 활동</h2>
+    <div class="e"><div class="t">Counter-Mapping</div><div class="s"><p>통물도서관 · 제주 서귀포 · 2026년 6월 · 큐레이터 · Counter-Mapping 워크숍 시리즈에서 출발한 단체전. 사운드, 영상, 사진, 실험적 지도 작업 포함.</p></div></div>
+    <div class="e"><div class="t">Kinofield Art Collective</div><div class="s"><p>Altitude 518 · 제주 · 2025년 11월–현재 · 공동설립자 · 예술기반 교육·연구, 영화 제작, 미디어 퍼포먼스, 퍼머컬처 농업을 실천하는 제주 기반 예술 집단.</p></div></div>
+    <div class="e"><div class="t">NOW Reading Series</div><div class="s"><p>캘리포니아주 샌디에고 및 멕시코 티후아나 · 2014년 5월–2020년 3월 · 공동설립자 및 큐레이터 · 접경지역 월간 문학 낭독 시리즈. 티후아나/샌디에고 지역 시인·작가·예술가 150여 명이 참여한 60회의 공연 진행.</p></div></div>
+    <div class="e"><div class="t">Gosung Cinema Series</div><div class="s"><p>대구 · 2011년 2월–2012년 2월 · 설립자 및 큐레이터 · 마이크로시네마 및 퍼포먼스 시리즈.</p></div></div>
+  </section>
+
+  <section><h2>주요 학회 발표</h2>
+    <div class="e"><div class="t">“Distributed Operations”: The Militarization of Essential Infrastructure</div><div class="s"><p>Peace for the Sea Conference · 대만 지룽 · 2025년 10월</p></div></div>
+    <div class="e"><div class="t">Abstraction and Realization: On the Epistemologies of Zen for Film</div><div class="s"><p>Spiral Film and Philosophy Conference · 캐나다 토론토 · 2025년 5월</p></div></div>
+    <div class="e"><div class="t">Realizing the Sea of Peace and Co-Existence</div><div class="s"><p>Association of American Geographers Annual Meeting · 미시건주 디트로이트 · 2025년 3월</p></div></div>
+    <div class="e"><div class="t">Struggle Song: Sonic Conflict in the Jeju Anti-Base Movement</div><div class="s"><p>HASTAC Critical Making and Social Justice Conference · Pratt Institute, 뉴욕 · 2023년 6월</p></div></div>
+    <div class="e"><div class="t">Life and After Life: The Struggle Against the Jeju Naval Base</div><div class="s"><p>Cultural Studies Association Conference · George Mason University, 버지니아주 페어팩스 · 2023년 6월</p></div></div>
+    <div class="e"><div class="t">Thick Membrane: Inside the Cinematic Surface</div><div class="s"><p>Society for Cinema and Media Studies Conference · 콜로라도주 덴버 · 2023년 4월 · 라운드테이블: Abstraction and Aesthetics of Movement</p></div></div>
+    <div class="e"><div class="t">Replacing the Map: Creative Geography on Jeju Island</div><div class="s"><p>Cultural Studies Association Conference · Columbia College, 시카고 · 2022년 6월</p></div></div>
+    <div class="e"><div class="t">Ways of Being-in-the-Way: Plaza and Place on Jeju Island</div><div class="s"><p>Mimesis and Composition Summer School Workshop · 이탈리아 파도바 대학교 · 2022년 3월</p></div></div>
+    <div class="e"><div class="t">Being-in-the-Way: Place Cultivation and Coordination in Gangjeong Village</div><div class="s"><p>Association for Asian Studies · 하와이주 호놀룰루 · 2022년 3월</p></div></div>
+    <div class="e"><div class="t">On the Fence: Experimental Solidarities on Jeju Island and the US-Mexico Border</div><div class="s"><p>Multiple Decolonialities and the Making of Asian Commons · 온라인 · 2022년 2월</p></div></div>
+    <div class="e"><div class="t">Body Work: Jeju Haenyeo and the Laboring Image</div><div class="s"><p>Cultural Studies Association Conference · 온라인 · 2021년 6월</p></div></div>
+    <div class="e"><div class="t">Bearing Faces: Identity and Image on Jeju Island</div><div class="s"><p>World Weary: Cultures of Exhaustion Roundtable · University of Sheffield · 온라인 · 2021년 5월</p></div></div>
+    <div class="e"><div class="t">The Face of the Haenyeo: Images Against Depiction</div><div class="s"><p>UCLA–UCSD 대학원생 패널 · 캘리포니아대학교 샌디에고 · 2018년 12월</p></div></div>
+    <div class="e"><div class="t">Tierra y Libertad: Autonomous Aesthetics at the Magonista Front</div><div class="s"><p>Performance Studies International 2018 · 대구 · 2018년 7월</p></div></div>
+    <div class="e"><div class="t">Tierra y Libertad: Pens/Hacer Politics, Collective Aesthetics Against Representation</div><div class="s"><p>Art, Materiality and Representation Conference · SOAS, University of London · 2018년 6월</p></div></div>
+    <div class="e"><div class="t">Tierra y Libertad: Flag and Phrase in a 21st-Century Border Zone</div><div class="s"><p>International Communication Association Conference · 캘리포니아주 샌디에고 · 2017년 5월 · Making &amp; Doing 패널</p></div></div>
+    <div class="e"><div class="t">Two Vectors and a Busted Crux: Flag and Constitution in Theoretical Magonism</div><div class="s"><p>Centennial Conference on La Constitución Ha Muerto · 카사 데 엘 이호 델 아우이소테, 멕시코시티 · 2017년 2월</p></div></div>
+    <div class="e"><div class="t">Byeokhwa on Jeju Island: Four Modes of Located Representation</div><div class="s"><p>Transnational Korean Studies Graduate Student Workshop · 캘리포니아대학교 샌디에고 · 2016년 10월</p></div></div>
+    <div class="e"><div class="t">Tierra y Libertad as Alien Object: Autonomous Materialism Without Agency</div><div class="s"><p>Shaping Change: Remembering Octavia E. Butler · 캘리포니아대학교 샌디에고 · 2016년 6월</p></div></div>
+    <div class="e"><div class="t">Flag Maneuvers in Tijuana and San Diego</div><div class="s"><p>Binational Communications Conference · 샌디에고 주립대학교 · 2016년 4월</p></div></div>
+    <div class="e"><div class="t">¡Es hora de alzar banderas!: Presentarán proyecto de historia Tierra y Libertad</div><div class="s"><p>Historical Conference on Tierra y Libertad · 바하칼리포르니아 자치대학교(UABC), 티후아나 · 2016년 4월</p></div></div>
+  </section>
+
+</article>
+</div>
+<script>
+(function(){
+  var KEY='cv-lang';
+  function set(l, save){
+    document.getElementById('cv-en').hidden = l!=='en';
+    document.getElementById('cv-ko').hidden = l!=='ko';
+    document.documentElement.lang = l;
+    document.querySelectorAll('.lang button').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.l===l ? 'true':'false'); });
+    if (save) { try{ localStorage.setItem(KEY,l); }catch(e){} if (location.hash !== '#'+l) history.replaceState(null,'','#'+l); }
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){ b.addEventListener('click', function(){ set(b.dataset.l, true); }); });
+  var start = (location.hash==='#ko'||location.hash==='#en') ? location.hash.slice(1) : null;
+  if (!start) { try{ start = localStorage.getItem(KEY); }catch(e){} }
+  if (!start) start = (navigator.language||'').toLowerCase().indexOf('ko')===0 ? 'ko' : 'en';
+  set(start, false);
+  addEventListener('hashchange', function(){ if (location.hash==='#ko'||location.hash==='#en') set(location.hash.slice(1), false); });
+})();
+</script>
+</body>
+</html>
