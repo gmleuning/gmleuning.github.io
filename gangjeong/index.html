@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>강정마을 공동체 달력 · Gangjeong Community Calendar</title>
+<meta name="description" content="생명평화강정마을 공동체 달력과 지도. Gangjeong Village community calendar and map: daily actions, events, and how to add your own.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* A public notice board, not a portfolio: bilingual throughout (Korean first), large type, one sea-green accent,
+   the daily schedule above the fold because it is what most visitors need. */
+:root{
+  --bg:#f6f6f2; --card:#fff; --ink:#17232b; --mute:#5a666d; --line:#dcdfd9; --sea:#0e6b66; --sea-soft:#e3efed;
+  --f:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#11181c;--card:#182227;--ink:#e8eeee;--mute:#9fb0b3;--line:#2a373c;--sea:#5cc2b9;--sea-soft:#1b3332;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#11181c;--card:#182227;--ink:#e8eeee;--mute:#9fb0b3;--line:#2a373c;--sea:#5cc2b9;--sea-soft:#1b3332;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{background:var(--bg)}
+body{margin:0;color:var(--ink);font:400 17px/1.65 var(--f);word-break:keep-all;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--sea)}
+:focus-visible{outline:3px solid var(--sea);outline-offset:2px}
+.wrap{max-width:62rem;margin:0 auto;padding-block:2rem 3rem;display:grid;gap:1.25rem}
+header{padding-block:1rem .5rem}
+.village{font-size:16px;font-weight:500;color:var(--sea);margin:0}
+h1{font-size:clamp(26px,5vw,40px);line-height:1.2;margin:.2rem 0 .4rem;font-weight:700;text-wrap:balance}
+h1 .en{display:block;font-size:.55em;font-weight:500;color:var(--mute)}
+.lead{margin:0;color:var(--mute);max-width:42rem}
+section{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1.25rem 1.25rem 1.4rem;min-width:0}
+h2{font-size:21px;margin:0 0 .9rem;line-height:1.3}
+h2 .en{color:var(--mute);font-weight:500;font-size:.8em;margin-left:.4em}
+.daily{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.75rem}
+.daily li{background:var(--sea-soft);border-radius:8px;padding:.85rem .9rem;min-width:0}
+.daily .t{font-size:27px;font-weight:700;color:var(--sea);font-variant-numeric:tabular-nums;line-height:1.1}
+.daily .ko{font-weight:700;margin-top:.35rem}
+.daily .en{color:var(--mute);font-size:15px;line-height:1.4}
+.bar{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;justify-content:space-between;margin-bottom:.8rem}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.seg button{font:500 15px var(--f);background:none;color:var(--ink);border:0;padding:.45rem .8rem;cursor:pointer}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button[aria-pressed="true"]{background:var(--sea);color:#fff}
+.frame{position:relative;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff}
+.frame iframe{display:block;width:100%;border:0}
+#cal{height:640px}
+#map{height:480px}
+.actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:.75rem}
+.btn{display:block;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:.8rem .95rem;background:var(--card)}
+.btn:hover{border-color:var(--sea)}
+.btn b{display:block;color:var(--sea)}
+.btn span{color:var(--mute);font-size:15px}
+.copy{display:flex;gap:.5rem;margin-top:.75rem;min-width:0}
+.copy input{flex:1;min-width:0;font:14px ui-monospace,monospace;padding:.5rem .6rem;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
+.copy button{font:500 15px var(--f);border:1px solid var(--sea);background:var(--sea);color:#fff;border-radius:6px;padding:.45rem .8rem;cursor:pointer}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.two p{margin:0}
+.note{color:var(--mute);font-size:15px;margin:.6rem 0 0}
+footer{color:var(--mute);font-size:15px;padding-top:.5rem}
+@media (max-width:760px){
+  .daily{grid-template-columns:1fr 1fr}
+  .two{grid-template-columns:1fr}
+  #cal{height:560px}
+  #map{height:380px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="village">생명평화강정마을 · Gangjeong Village, Jeju</p>
+    <h1>강정마을 공동체 달력 <span class="en" lang="en">Gangjeong Community Calendar</span></h1>
+    <p class="lead">강정마을의 일정, 모임, 행사를 한곳에. 누구나 구독하고 일정을 제출할 수 있습니다.<br><span lang="en">Events, meetings, and actions in Gangjeong Village. Anyone can subscribe or submit an event.</span></p>
+  </header>
+
+  <section aria-labelledby="h-daily">
+    <h2 id="h-daily">매일 <span class="en" lang="en">Every day</span></h2>
+    <ol class="daily">
+      <li><div class="t">07:00</div><div class="ko">생명평화 백배</div><div class="en" lang="en">100 Bows of Life and Peace</div></li>
+      <li><div class="t">11:00</div><div class="ko">생명평화 미사</div><div class="en" lang="en">Peace and Life Mass</div></li>
+      <li><div class="t">12:00</div><div class="ko">인간띠 잇기</div><div class="en" lang="en">Human Chain</div></li>
+      <li><div class="t">함께</div><div class="ko">할망물식당 공동 식사</div><div class="en" lang="en">Shared meal, Halmangmul Sikdang (Grandmother Water Restaurant)</div></li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="h-cal">
+    <div class="bar">
+      <h2 id="h-cal" style="margin:0">달력 <span class="en" lang="en">Calendar</span></h2>
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+        <div class="seg" role="group" aria-label="보기 View">
+          <button type="button" id="v-agenda" data-mode="AGENDA" aria-pressed="true">목록 List</button>
+          <button type="button" id="v-week" data-mode="WEEK" aria-pressed="false">주 Week</button>
+          <button type="button" id="v-month" data-mode="MONTH" aria-pressed="false">월 Month</button>
+        </div>
+        <div class="seg" role="group" aria-label="언어 Language">
+          <button type="button" id="l-ko" data-hl="ko" aria-pressed="true">한국어</button>
+          <button type="button" id="l-en" data-hl="en" aria-pressed="false">English</button>
+        </div>
+      </div>
+    </div>
+    <div class="frame"><iframe id="cal" title="강정마을 공동체 달력 Gangjeong Community Calendar" loading="lazy"></iframe></div>
+    <p class="note">시간은 한국 표준시(KST) 기준입니다. <span lang="en">Times are Korea Standard Time.</span></p>
+  </section>
+
+  <section aria-labelledby="h-join">
+    <h2 id="h-join">구독 · 일정 제출 <span class="en" lang="en">Subscribe · Submit an event</span></h2>
+    <div class="actions">
+      <a class="btn" id="sub-google" href="#"><b>구글 캘린더에 추가</b><span lang="en">Add to Google Calendar</span></a>
+      <a class="btn" id="sub-webcal" href="#"><b>아이폰 · 맥 · 아웃룩</b><span lang="en">Subscribe on iPhone, Mac, or Outlook</span></a>
+      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdEj8x1ELDrN-eAVfngxY-0Ml0CB95QInjftHtV3WrApkxbsw/viewform"><b>일정 제출하기</b><span lang="en">Submit an event (form)</span></a>
+    </div>
+    <div class="copy"><input id="ics" readonly aria-label="iCal 주소 iCal address"><button type="button" id="copy">복사 Copy</button></div>
+    <p class="note">문의사항, 건의사항, 이메일을 통한 행사 제출: <a href="mailto:gleuning@ucsd.edu">gleuning@ucsd.edu</a><br><span lang="en">Questions, concerns, or email event submissions: gleuning@ucsd.edu</span></p>
+  </section>
+
+  <section aria-labelledby="h-map">
+    <h2 id="h-map">지도 <span class="en" lang="en">Map</span></h2>
+    <div class="frame"><iframe id="map" title="강정마을 지도 Map of Gangjeong Village" loading="lazy" src="https://www.google.com/maps/d/embed?mid=1GNojQO5AssNh3QuiVEvG9eCkVb_2RQA&amp;hl=ko&amp;ehbc=2E312F"></iframe></div>
+    <p class="note"><a href="https://www.google.com/maps/d/viewer?mid=1GNojQO5AssNh3QuiVEvG9eCkVb_2RQA">구글 지도에서 열기 · Open in Google Maps</a></p>
+  </section>
+
+  <section aria-labelledby="h-about">
+    <h2 id="h-about">강정마을 <span class="en" lang="en">Gangjeong Village</span></h2>
+    <div class="two">
+      <p>7,000일 동안 강정마을 생명평화운동은 제주도에서 군사주의와 환경 파괴에 맞서 싸워왔습니다. 2007년 마을의 정신적·문화적 중심지인 구럼비 바위를 지키기 위한 투쟁으로 시작된 이 운동은 동아시아 현대사에서 가장 오랫동안 지속된 비폭력 저항운동 가운데 하나가 되었습니다. 해군기지는 2016년에 완공되었으며, 현재는 태평양 지역에서 한국과 미국 해군의 작전을 지원하는 역할을 하고 있습니다. 그러나 마을 주민들과 활동가들은 여전히 저항을 이어가고 있습니다. 매일 오전 7시 ‘생명평화 백배’, 오전 11시 ‘생명평화 미사’, 정오 12시 ‘인간띠 잇기’, 그리고 할망물식당에서 함께하는 공동 식사를 통해 그들의 실천은 계속되고 있습니다.</p>
+      <p lang="en">For 7,000 days, the Gangjeong Village Peace and Life Movement has been challenging militarism and environmental destruction on Jeju Island, South Korea. Beginning in 2007 with the defense of Gureombi Rock, the spiritual and cultural heart of the village, it became one of the most sustained nonviolent resistance movements in recent East Asian history. The base was completed in 2016 and today serves South Korean and US naval operations in the Pacific. Villagers and activists continue their resistance with four daily actions: the 100 Bows of Life and Peace at 7am, the Peace and Life Mass at 11:00, the Human Chain at 12:00, and a shared meal at the Halmangmul Sikdang (Grandmother Water Restaurant).</p>
+    </div>
+  </section>
+
+  <footer>생명평화강정마을 · Gangjeong Village Peace and Life Movement</footer>
+</div>
+<script>
+(function(){
+  var ID = "13539d9d3ed2b9c962a01c9f2ee1b8a127cf785b4903d718b95bf68abfbd3a63@group.calendar.google.com";
+  var ics = "https://calendar.google.com/calendar/ical/" + encodeURIComponent(ID) + "/public/basic.ics";
+  var cal = document.getElementById("cal");
+  var state = { mode: innerWidth < 760 ? "AGENDA" : "AGENDA", hl: "ko" };
+  try { var s = JSON.parse(localStorage.getItem("gj-cal") || "{}"); if (s.mode) state.mode = s.mode; if (s.hl) state.hl = s.hl; } catch (e) {}
+  function render(){
+    cal.src = "https://calendar.google.com/calendar/embed?src=" + encodeURIComponent(ID) +
+      "&ctz=Asia%2FSeoul&mode=" + state.mode + "&hl=" + state.hl + "&showTitle=0&showPrint=0&showCalendars=0&showTz=0&wkst=2";
+    document.querySelectorAll("[data-mode]").forEach(function(b){ b.setAttribute("aria-pressed", b.dataset.mode === state.mode ? "true" : "false"); });
+    document.querySelectorAll("[data-hl]").forEach(function(b){ b.setAttribute("aria-pressed", b.dataset.hl === state.hl ? "true" : "false"); });
+    try { localStorage.setItem("gj-cal", JSON.stringify(state)); } catch (e) {}
+  }
+  document.querySelectorAll("[data-mode]").forEach(function(b){ b.onclick = function(){ state.mode = b.dataset.mode; render(); }; });
+  document.querySelectorAll("[data-hl]").forEach(function(b){ b.onclick = function(){ state.hl = b.dataset.hl; render(); }; });
+  render();
+  document.getElementById("sub-google").href = "https://calendar.google.com/calendar/render?cid=" + encodeURIComponent(ID);
+  document.getElementById("sub-webcal").href = ics.replace(/^https:/, "webcal:");
+  var input = document.getElementById("ics"); input.value = ics;
+  document.getElementById("copy").onclick = function(){
+    var btn = this;
+    function done(){ btn.textContent = "복사됨 Copied"; setTimeout(function(){ btn.textContent = "복사 Copy"; }, 1800); }
+    if (navigator.clipboard) navigator.clipboard.writeText(ics).then(done, function(){ input.select(); });
+    else input.select();
+  };
+})();
+</script>
+</body>
+</html>

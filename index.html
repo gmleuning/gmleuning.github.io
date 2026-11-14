@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Grant M. Leuning</title>
+<script>(function(){var d=document.documentElement,l;try{l=localStorage.getItem("cv-lang")}catch(e){}if(!l)l=/^ko/i.test(navigator.language||"")?"ko":"en";if(l==="ko"){d.classList.add("ko");d.lang="ko";var p=document.createElement("link");p.rel="preload";p.as="font";p.type="font/woff2";p.crossOrigin="";p.href="fonts/GowunDodum-Regular.woff2";document.head.appendChild(p)}})()</script>
+<link rel="preload" href="fonts/GowunDodum-Label.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="fonts/AVHersheyDuplex-Medium.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="fonts/AVHersheyDuplex-Light.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="description" content="Grant M. Leuning: media scholar, artist, and organizer. Gangjeong Village, Jeju.">
+<link rel="stylesheet" href="assets/fonts.css?v=0ab16be748">
+<link rel="stylesheet" href="assets/site.css?v=0ab16be748">
+<style>
+/* Home. Top: the name in Hershey Duplex Light with a red bar set off-register behind it, the way
+   "Ohm" sits on its tape: the bar starts after the "a" of Grant and runs on under the start of
+   the section tabs. Below, alone and centred: the bull with its struck eyes. */
+.home{max-width:84rem;margin:0 auto;padding-block:2.4rem 3rem;display:grid;gap:clamp(2rem,5vw,4rem)}
+.ohm{--nf:clamp(40px,5.6vw,80px);display:flex;flex-wrap:wrap;align-items:flex-end;row-gap:1rem;isolation:isolate}
+.namebar{margin:0;font:300 var(--nf)/1 var(--title);white-space:nowrap;color:var(--ink)}
+.namebar .on-bar{position:relative}
+.namebar .on-bar::before{content:"";position:absolute;z-index:-1;left:.04em;right:-.6em;bottom:-.08em;height:.5em;
+  background:url("assets/drawings/name-bar.png") center/100% 100% no-repeat}
+.tabs{position:relative;display:flex;flex-wrap:wrap;gap:.4rem 1.6em;padding:0 0 .7em calc(var(--nf) * .6 + 1.1rem);font:500 clamp(12px,calc(1.05vw + 1px),15px)/1 var(--title);letter-spacing:.2em;text-transform:uppercase}
+.tabs a:hover{color:var(--red)}
+.bull{justify-self:center;width:min(28rem,76vw);margin:0}
+.bull img{width:100%}
+@media (max-width:760px){
+  .ohm{--nf:clamp(34px,10.5vw,60px)}
+  .namebar .on-bar::before{right:-.15em}
+  .tabs{width:100%;padding:.6rem 0 0;gap:.7rem 1.4em}
+}
+</style>
+</head>
+<body>
+<main class="home">
+  <header class="ohm">
+    <h1 class="namebar" aria-label="Grant M. Leuning">Gra<span class="on-bar">nt M. Leuning</span></h1>
+    <nav class="tabs" aria-label="Site">
+      <a href="art-work/"><span class="l-en">Art Work</span><span class="l-ko" lang="ko">작품</span></a><a href="research/"><span class="l-en">Research</span><span class="l-ko" lang="ko">연구</span></a><a href="cv/"><span class="l-en">C.V.</span><span class="l-ko" lang="ko">이력</span></a><a href="pedagogy/"><span class="l-en">Pedagogy</span><span class="l-ko" lang="ko">교육</span></a><a href="projects/"><span class="l-en">Projects</span><span class="l-ko" lang="ko">프로젝트</span></a><a href="contact/"><span class="l-en">Contact</span><span class="l-ko" lang="ko">연락처</span></a>
+      <button class="lang-t" type="button" data-lang-toggle><span class="l-en" lang="ko">한국어</span><span class="l-ko" lang="en">English</span></button>
+    </nav>
+  </header>
+  <figure class="bull">
+    <img src="assets/drawings/bull.jpg" alt="Print of a bull's head, its eyes struck through with a red line">
+  </figure>
+</main>
+<script src="assets/site.js?v=0ab16be748"></script>
+</body>
+</html>
