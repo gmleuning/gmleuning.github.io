@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doctor Ten-Times</title>
+<link rel="icon" href="dottore_logo.svg" type="image/svg+xml">
+<style>
+/* Same colours and settings as the book (light/dark, accent, typeface, text size, line spacing), read from the
+   book's saved settings in this browser; see the script at the end. */
+:root{
+  --bg:#ffffff; --paper:#ffffff; --ink:#111111; --muted:#6e6e6e; --soft:#4f4f4f; --rule:#e1e1e1;
+  --accent:var(--acc,#a8261b);
+  --size:17px; --leading:1.6; --width:760px;
+  --body:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --ui:system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e0e0e; --paper:#161616; --ink:#f0f0f0; --muted:#9c9c9c; --soft:#c4c4c4; --rule:#2e2e2e;
+    --accent:color-mix(in srgb, var(--acc,#a8261b) 60%, #fff);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e0e0e; --paper:#161616; --ink:#f0f0f0; --muted:#9c9c9c; --soft:#c4c4c4; --rule:#2e2e2e;
+  --accent:color-mix(in srgb, var(--acc,#a8261b) 60%, #fff);
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink)}
+body{font:var(--size)/var(--leading) var(--body)}
+.back{max-width:var(--width);margin:0 auto;padding:14px 16px 0;font:14px var(--ui)}
+.back a{color:var(--accent);text-decoration:none}
+.back a:hover{text-decoration:underline}
+main{max-width:var(--width);margin:0 auto;padding:10px 16px 90px}
+.fig{display:block;margin:10px auto 0;width:300px;max-width:100%;height:auto}
+.lt{display:block} .dk{display:none}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .lt{display:none} :root:not([data-theme="light"]) .dk{display:block} }
+:root[data-theme="dark"] .lt{display:none} :root[data-theme="dark"] .dk{display:block}
+h1{text-align:center;font-size:2.1em;line-height:1.2;margin:.35em 0 .15em;font-weight:600;letter-spacing:.02em}
+.sub{text-align:center;color:var(--soft);margin:0 0 2.2em}   /* the credit: Molière's play title in roman inside italics */
+.sp{margin:0 0 1.15em}
+.sp b{color:var(--accent);font-weight:600}
+</style>
+</head>
+<body>
+<div class="back"><a href="dottore.html">&larr; Dottore</a></div>
+<main>
+<img class="fig lt" src="dottore_watercolour.png" alt="Il Dottore">
+<img class="fig dk" src="dottore_lines_white.png" alt="Il Dottore">
+<h1>Doctor Ten-Times</h1>
+<p class="sub"><i>after Molière,</i> La Jalousie du Barbouillé<i>, scene 2</i></p>
+<p class="sp"><b>Flourish:</b> You look like an educated man, I'd like to ask you a question.</p>
+<p class="sp"><b>Dottore:</b> First, you must not misprize me, I am not only educated, I am a doctor but not merely. I am a doctor one time, two times, three times, four times, five times, six times, seven times, eight times, nine times and ten times inclusive.</p>
+<p class="sp"><b>Flourish:</b> Ah, indeed, the right person to speak...</p>
+<p class="sp"><b>Dottore:</b>  I am a doctor one time over because the foundation of all knowledge is unity, the number of which is the one in its own self, that number is adscititiously known as the first of the numbers, meaning that I am the doctor in the first place and therefore placed first among doctors. Two times, because the essence of perfect and plenary knowledge is the sensorium and the understanding, and as a doctor of the first order, I must be undisplanted in all of the both of the two, thence I am a doctor two times.</p>
+<p class="sp"><b>Flourish:</b> Yes, I see ...</p>
+<p class="sp"><b>Dottore:</b> Third, being of the first, and the second as well, I am therefore doctor three times over, <em>syllogismos Barbara</em>. The number three is, as Aristotle says, νομβερο περφεκτα, the perfect number, perfection is defined as full wholeness, and therefore thrice a doctor, I am holyful.</p>
+<p class="sp"><b>Flourish:</b> Okay, dear Dottore ...</p>
+<p class="sp"><b>Dottore:</b> Four times must be most pellucidly obvious to you, philosophy has its four branches, that of logic, ethic, physic, and metaphysic, indoctorated in Philosophy as I am, I am thus four ways ramified and verified in each, four times a doctor.</p>
+<p class="sp"><b>Flourish:</b> I don't doubt, and I concede the ten. Now if I could just ...</p>
+<p class="sp"><b>Dottore:</b> How many universals are there?</p>
+<p class="sp"><b>Flourish:</b> Universal whats?</p>
+<p class="sp"><b>Dottore:</b> You see, if I am going to render myself qua crystal clear, we needs most palestric elaboration. Five, there are five universals: genus, species, difference, property, and accident. Without these it is impossible to know anything, neither haecceitly nor quidditly, and I happen to know for myself my all five. Genus: <em>Homo</em>, species: <em>Sapiens Sapiens</em>, difference: in degree (<em>Doctoratus in Philosophia</em>), property: rented apartment and borrowed shed, and accidentally: I am Bolognese.</p>
+<p class="sp"><b>Flourish:</b> I relent, complete the set.</p>
+<p class="sp"><b>Dottore:</b> In the holy books, man is assigned a digit, the digit six. My doctoring was studied precisely on these sapiens to the second <em>potenz</em>, hence doctor six times. Six is, according to Euclides, τέλειος ἀριθμός, the perfect number, perfection is defined as consummate totality. Therefore, I am totally consummated.</p>
+<p class="sp"><b>Flourish:</b> I await whatever mystery comes next.</p>
+<p class="sp"><b>Dottore:</b> Seven, there are seven ages of man. I myself am a man both <em>in propria persona</em> and <em>ad hominem</em>, conative and cognitive. Doctor eight, doctorate, and of course, the number eight is, according to Augustine Hipponites, the <em>numerus perfectionis</em>, the perfect number, where perfection is defined as void's immediacy. Therefore, I am immediately void. Nine times, because there are nine tenths of the law, and doctor ten times, because ten supervenes itself in itself, it cannot be acquired or arrived at without all the numbers that came before it, one, two, three, four, five, six, seven, eight, nine and ten too, hence, I am a doctor and a dicker of doctors. Like the tree of Porphyry, I contain them all once again. <em>Toto coelo, tutti culo</em>, I am one time, two times, three times, four times, five times, six times, seven times, eight times, nine times, and ten times a doctor.</p>
+<p class="sp"><b>Flourish:</b> What in the hell is this? I wanted to talk to an educated man and instead I have to hear some bozo counting his As, Bs, and Cs. Are there any eleven-times doctors I can talk to?</p>
+</main>
+<script>
+// Use the book's saved settings (same browser, same site): theme, accent, typeface, text size, line spacing.
+(function(){
+  let S={}; try{ S=JSON.parse(localStorage.getItem('dottore.settings')||'{}')||{}; }catch(e){}
+  const r=document.documentElement, F={
+    palatino:'"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif',
+    georgia:'Georgia,"Times New Roman",serif', garamond:'"EB Garamond",Garamond,"Adobe Garamond Pro","Times New Roman",serif',
+    sans:'system-ui,-apple-system,"Segoe UI",Roboto,sans-serif'};
+  if(S.theme==='light'||S.theme==='dark') r.dataset.theme=S.theme;
+  if(S.acc) r.style.setProperty('--acc',S.acc);
+  if(S.size) r.style.setProperty('--size',S.size+'px');
+  if(S.leading) r.style.setProperty('--leading',S.leading);
+  if(S.font&&S.font!=='custom'&&F[S.font]) r.style.setProperty('--body',F[S.font]);
+  if(S.font==='custom'){   // the font the reader uploaded in the book's settings
+    try{ const q=indexedDB.open('dottore',1); q.onsuccess=()=>{ try{
+      const g=q.result.transaction('fonts','readonly').objectStore('fonts').get('user');
+      g.onsuccess=async()=>{ if(!g.result) return; const face=new FontFace('DottoreUserFont',g.result.data); await face.load();
+        document.fonts.add(face); r.style.setProperty('--body','"DottoreUserFont",'+F.palatino); }; }catch(e){} }; }catch(e){}
+  }
+})();
+</script>
+</body>
+</html>
